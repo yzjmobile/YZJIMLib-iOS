@@ -1,0 +1,11 @@
+framework module YZJIMLib {
+  umbrella header "YZJIMLib-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module YZJIMLib.Swift {
+    header "YZJIMLib-Swift.h"
+    requires objc
+}
