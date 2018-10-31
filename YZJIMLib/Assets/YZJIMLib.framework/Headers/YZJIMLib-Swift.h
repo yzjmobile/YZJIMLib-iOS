@@ -317,18 +317,6 @@ SWIFT_CLASS("_TtC8YZJIMLib7YZJFile")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSProgress;
-
-SWIFT_CLASS("_TtC8YZJIMLib17YZJFileDownloader")
-@interface YZJFileDownloader : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) YZJFileDownloader * _Nonnull shared;)
-+ (YZJFileDownloader * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-/// [fileid: progress]
-@property (nonatomic, copy) NSDictionary<NSString *, NSProgress *> * _Nonnull progressCache;
-- (void)downloadFileWithFileId:(NSString * _Nullable)fileId progressBlock:(void (^ _Nullable)(NSProgress * _Nullable))progressBlock downloadPath:(NSString * _Nullable)downloadPath completion:(void (^ _Nullable)(BOOL, NSString * _Nullable))completion;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 typedef SWIFT_ENUM(NSInteger, YZJFileMessageType, closed) {
   YZJFileMessageTypeFile = 0,
   YZJFileMessageTypeImage = 1,
@@ -441,18 +429,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) YZJIMLib * _
 @end
 
 
-@interface YZJIMLib (SWIFT_EXTENSION(YZJIMLib))
-/// 文件下载
-/// \param fileId 文件id
-///
-/// \param downloadPath 文件下载的存储路径
-///
-/// \param progressBlock 进度回调，也会通过YZJFileDownloadProgressNotification通知发出
-///
-/// \param completion 完成回调，true为下载成功，false为下载失败, String为fileId
-///
-- (void)downloadFileWithFileId:(NSString * _Nullable)fileId progressBlock:(void (^ _Nullable)(NSProgress * _Nullable))progressBlock downloadPath:(NSString * _Nullable)downloadPath completion:(void (^ _Nullable)(BOOL, NSString * _Nullable))completion;
-@end
 
 @class UILocalNotification;
 

@@ -45,6 +45,7 @@
 #import "KDNetwork.h"
 #import "KDNetworkConfig.h"
 #import "KDNetworkManager.h"
+#import "KDNetworkPrivate.h"
 #import "KDReachabilityManager.h"
 #import "KDRequest+OAuth.h"
 #import "KDRequest.h"
